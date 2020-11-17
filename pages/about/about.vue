@@ -11,7 +11,7 @@
 		<view class="" @click="inviteJoin">邀请用户加入</view>
 		<view class="" @click="participateTeam">我参与的团队</view>
 		<view class="" @click="beInvited">被邀请记录</view>
-		<view class="" @click="agreeInvited">同意一个邀请</view>
+		<view class="" @click="agreeInvited">同意一个邀请123</view>
 	</view>
 </template>
 
@@ -75,7 +75,7 @@
 				console.log(res);
 			},
 			async inviteJoin(){
-				let obj =  {userId:'5faf4ffdd79066023cdaf37a',teamId:'9'};
+				let obj =  {userId:'5fb3cb064c75d740c00ad4f3',teamId:'1'};
 				let res = await this.$Post('tsc/inviteJoin',obj);
 				this.$Toast(res.data.message)
 				console.log(res);

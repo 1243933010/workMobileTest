@@ -1,4 +1,6 @@
-var baseUrl = 'http://192.168.0.117:3000/';
+// var baseUrl = 'http://192.168.0.117:3000/';
+var baseUrl = 'http://192.168.0.103:3000/';
+
 // var baseUrl = 'http://106.55.59.24:3000/';
 export let $Get=(url,data)=>{
 		return new Promise((resolve,reject)=>{

@@ -113,7 +113,7 @@
 				})
 			},
 			async login(){
-				let obj = {username:'yue',pwd:'123456'};
+				let obj = {username:'666',pwd:'123456'};
 				let res = await this.$Post('api/login',obj)
 				this.$Toast(res.data.message);
 				if(res.data.code===200){
