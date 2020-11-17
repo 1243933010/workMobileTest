@@ -93,7 +93,10 @@
 				console.log(res);
 			},
 			async agreeInvited(){
-				let obj = {id:'1',status:'1'};
+				let obj = {id:'1',status:'1',userId:uni.getStorageSync('userinfo')._id,teamId:"9"};
+				let res = await this.$Post('tsc/processInvitation',obj);
+				this.$Toast(res.data.message)
+				console.log(res);
 			}
 		}
 	}
