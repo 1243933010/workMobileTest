@@ -75,13 +75,15 @@
 				console.log(res);
 			},
 			async inviteJoin(){
-				let obj =  {userId:'5fb3cb064c75d740c00ad4f3',teamId:'1'};
+				//5fb3414ff0fecf27bc912e4d
+				//5faf4ffdd79066023cdaf37a
+				let obj =  {userId:'5fb3414ff0fecf27bc912e4d',inviteId:'5faf4ffdd79066023cdaf37a',teamId:'8'};
 				let res = await this.$Post('tsc/inviteJoin',obj);
 				this.$Toast(res.data.message)
 				console.log(res);
 			},
 			async participateTeam(){
-				let obj =  {userId:'5fb3414ff0fecf27bc912e4d',teamId:'3'};
+				let obj =  {userId:uni.getStorageSync('userinfo')._id};
 				let res = await this.$Post('tsc/participateTeam',obj);
 				this.$Toast(res.data.message)
 				console.log(res);
@@ -93,7 +95,11 @@
 				console.log(res);
 			},
 			async agreeInvited(){
-				let obj = {id:'1',status:'1',userId:uni.getStorageSync('userinfo')._id,teamId:"9"};
+				let obj = {id:'1',
+				status:'1',
+				userId:uni.getStorageSync('userinfo')._id,
+				teamId:"8",
+				username:uni.getStorageSync('userinfo').username};
 				let res = await this.$Post('tsc/processInvitation',obj);
 				this.$Toast(res.data.message)
 				console.log(res);
