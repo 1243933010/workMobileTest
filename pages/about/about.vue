@@ -11,7 +11,8 @@
 		<view class="" @click="inviteJoin">邀请用户加入</view>
 		<view class="" @click="participateTeam">我参与的团队</view>
 		<view class="" @click="beInvited">被邀请记录</view>
-		<view class="" @click="agreeInvited">同意一个邀请123</view>
+		<view class="" @click="agreeInvited">同意一个邀请</view>
+		<view class="" @click="deleteTeam">删除某个团队</view>
 	</view>
 </template>
 
@@ -103,7 +104,13 @@
 				let res = await this.$Post('tsc/processInvitation',obj);
 				this.$Toast(res.data.message)
 				console.log(res);
-			}
+			},
+			async deleteTeam(){
+				let obj = {teamId:'1'}
+				let res = await this.$Post('tsc/deleteTeam',obj);
+				this.$Toast(res.data.message)
+				console.log(res);
+			},
 		}
 	}
 </script>
